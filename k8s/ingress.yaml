@@ -2,13 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: wellbing-ingress
-  namespace: wellbing-massage
+  namespace: hoyaweb
   annotations:
-    # 사용하는 Ingress Controller에 맞는 주석을 사용해야 합니다. (예: nginx-ingress)
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-    - http:
+    - host: wellbing-massage.hoyaweb.com
+      http:
         paths:
           - path: /api(/|$)(.*)
             pathType: Prefix
@@ -17,7 +17,7 @@ spec:
                 name: wellbing-server-service
                 port:
                   number: 3000
-          - path: /()(.*)
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
