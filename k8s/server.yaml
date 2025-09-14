@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: wellbing-server
-          image: parkjeongho/wellbing-server:0e31215ad0634f9c0357638f469ac156450fd415
+          image: parkjeongho/wellbing-server:6c624516e1c027958e4a1e1521dcbe54d8f47ebe
           ports:
             - containerPort: 3000
           env:
