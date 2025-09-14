@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wellbing-server-deployment
+  namespace: hoyaweb
 spec:
   replicas: 1
   selector:
@@ -22,14 +23,11 @@ spec:
               value: "3000"
           volumeMounts:
             - name: wellbing-data-storage
-              mountPath: /usr/src/app/server/data # JSON 데이터 저장 경로
-            - name: wellbing-uploads-storage
-              mountPath: /usr/src/app/server/public/uploads # 이미지 업로드 저장 경로
+              mountPath: /usr/src/app/server/data
+            - name: wellbing-data-storage
+              mountPath: /usr/src/app/server/public/uploads
       volumes:
         - name: wellbing-data-storage
-          persistentVolumeClaim:
-            claimName: wellbing-data-pvc
-        - name: wellbing-uploads-storage
           persistentVolumeClaim:
             claimName: wellbing-data-pvc
 ---
@@ -37,7 +35,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wellbing-server-service
-  namespace: wellbing-massage
+  namespace: hoyaweb
 spec:
   selector:
     app: wellbing-server
