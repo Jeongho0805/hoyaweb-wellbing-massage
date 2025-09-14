@@ -23,9 +23,9 @@ spec:
               value: "3000"
           volumeMounts:
             - name: wellbing-data-storage
-              mountPath: /usr/src/app/server/data
+              mountPath: /usr/src/app/data
             - name: wellbing-data-storage
-              mountPath: /usr/src/app/server/public/uploads
+              mountPath: /usr/src/app/public/uploads
       volumes:
         - name: wellbing-data-storage
           persistentVolumeClaim:

@@ -245,27 +245,18 @@
       },
       {
         "id": 2,
-        "url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "url": "/uploads/image-1757851340276-504067924.png",
         "title": "프리미엄 개인실",
-        "description": "프라이버시가 보장되는 개인 마사지룸"
+        "description": "프라이버시가 보장되는 개인 마사지룸",
+        "fileName": "스크린샷 2025-08-29 오후 9.51.48.png",
+        "uploadDate": "2025-09-14T12:02:20.282Z",
+        "service": "local-server"
       },
       {
         "id": 3,
         "url": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "title": "휴게 라운지",
         "description": "마사지 후 여유로운 휴식을 위한 공간"
-      },
-      {
-        "id": 4,
-        "url": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        "title": "아로마 테라피룸",
-        "description": "자연 향기로 가득한 아로마 전용공간"
-      },
-      {
-        "id": 5,
-        "url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        "title": "웰빙 카페 공간",
-        "description": "마사지 전후 차 한잔의 여유를 즐기는 카페"
       }
     ]
   },

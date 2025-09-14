@@ -41,6 +41,42 @@ const upload = multer({
   limits: { fileSize: 10 * 1024 * 1024 } // 10MB 파일 사이즈 제한
 });
 
+// GET /api/upload - 업로드된 이미지 목록 조회
+router.get('/', (req, res) => {
+  try {
+    const files = fs.readdirSync(uploadDir);
+    const imageFiles = files.filter(file => {
+      const ext = path.extname(file).toLowerCase();
+      return ['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext);
+    });
+
+    const images = imageFiles.map(filename => {
+      const filePath = path.join('/uploads', filename).replace(/\\/g, '/');
+      const fullPath = path.join(uploadDir, filename);
+      const stats = fs.statSync(fullPath);
+
+      return {
+        filename,
+        url: filePath,
+        uploadDate: stats.birthtime,
+        size: stats.size
+      };
+    });
+
+    // 최신순으로 정렬
+    images.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
+
+    res.json({
+      message: '이미지 목록 조회 성공',
+      images: images,
+      count: images.length
+    });
+  } catch (error) {
+    console.error('이미지 목록 조회 실패:', error);
+    res.status(500).json({ error: '이미지 목록을 불러올 수 없습니다.' });
+  }
+});
+
 // POST /api/upload - 이미지 업로드 처리 라우트
 router.post('/', upload.single('image'), (req, res, next) => {
   if (!req.file) {
@@ -53,7 +89,10 @@ router.post('/', upload.single('image'), (req, res, next) => {
 
   res.status(201).json({
     message: '이미지 업로드 성공!',
-    filePath: filePath
+    filePath: filePath,
+    filename: req.file.filename,
+    originalName: req.file.originalname,
+    size: req.file.size
   });
 });
 

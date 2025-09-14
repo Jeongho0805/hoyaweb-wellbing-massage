@@ -33,10 +33,12 @@ const compressImage = (file, maxWidth = 1200, quality = 0.9) => {
 
 const AdminDashboard = () => {
   const { logout } = useAuth();
-  const { content, saveContentToFile, isLoading } = useContent();
+  const { content, saveContentToFile, isLoading, uploadedImages, fetchUploadedImages } = useContent();
   const [editingContent, setEditingContent] = useState(content);
   const [activeTab, setActiveTab] = useState('hero');
   const [uploadingImages, setUploadingImages] = useState(new Set());
+  const [showImageSelector, setShowImageSelector] = useState(false);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -410,6 +412,25 @@ const AdminDashboard = () => {
     addPhoto(newPhoto);
   };
 
+  const openImageSelector = (photoIndex) => {
+    setSelectedPhotoIndex(photoIndex);
+    setShowImageSelector(true);
+    fetchUploadedImages(); // 이미지 목록 새로고침
+  };
+
+  const selectServerImage = (serverImage) => {
+    updateContent('gallery', 'photos', {
+      ...editingContent.gallery.photos[selectedPhotoIndex],
+      url: serverImage.url,
+      fileName: serverImage.filename,
+      uploadDate: serverImage.uploadDate,
+      service: 'server'
+    }, selectedPhotoIndex);
+
+    setShowImageSelector(false);
+    setSelectedPhotoIndex(null);
+  };
+
   const getStorageInfo = () => {
     try {
       const data = JSON.stringify(editingContent);
@@ -443,9 +464,90 @@ const AdminDashboard = () => {
     }
   };
 
+  const renderImageSelector = () => {
+    if (!showImageSelector) return null;
+
+    return (
+      <div className="modal-overlay" style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1000
+      }}>
+        <div className="modal-content" style={{
+          backgroundColor: 'white',
+          padding: '20px',
+          borderRadius: '10px',
+          maxWidth: '80vw',
+          maxHeight: '80vh',
+          overflow: 'auto'
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+            <h3>서버에 업로드된 이미지 선택</h3>
+            <button
+              onClick={() => setShowImageSelector(false)}
+              style={{ background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer' }}
+            >
+              ×
+            </button>
+          </div>
+
+          {uploadedImages.length === 0 ? (
+            <p>업로드된 이미지가 없습니다.</p>
+          ) : (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+              gap: '15px'
+            }}>
+              {uploadedImages.map((image, index) => (
+                <div
+                  key={index}
+                  style={{
+                    border: '2px solid #ddd',
+                    borderRadius: '8px',
+                    padding: '10px',
+                    cursor: 'pointer',
+                    transition: 'border-color 0.2s'
+                  }}
+                  onClick={() => selectServerImage(image)}
+                  onMouseEnter={(e) => e.target.style.borderColor = '#48bb78'}
+                  onMouseLeave={(e) => e.target.style.borderColor = '#ddd'}
+                >
+                  <img
+                    src={image.url}
+                    alt={image.filename}
+                    style={{
+                      width: '100%',
+                      height: '150px',
+                      objectFit: 'cover',
+                      borderRadius: '4px',
+                      marginBottom: '8px'
+                    }}
+                  />
+                  <div style={{ fontSize: '0.8rem', color: '#666' }}>
+                    <div><strong>{image.filename}</strong></div>
+                    <div>{new Date(image.uploadDate).toLocaleDateString('ko-KR')}</div>
+                    <div>{(image.size / 1024 / 1024).toFixed(2)} MB</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   const renderGalleryEditor = () => {
     const { sizeInMB, totalImages, githubImages, localImages, urlImages } = getStorageInfo();
-    
+
     return (
       <div className="editor-section">
         <h3>매장 갤러리 관리</h3>
@@ -508,6 +610,22 @@ const AdminDashboard = () => {
                     className="file-input"
                     disabled={uploadingImages.has(index)}
                   />
+
+                  <button
+                    type="button"
+                    onClick={() => openImageSelector(index)}
+                    style={{
+                      marginTop: '10px',
+                      padding: '8px 16px',
+                      backgroundColor: '#48bb78',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    서버 이미지 선택
+                  </button>
                   
                   {uploadingImages.has(index) && (
                     <div style={{
@@ -629,6 +747,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
+      {renderImageSelector()}
       <header className="admin-header">
         <div className="admin-nav">
           <h1>웰빙카페지압안마원 관리자</h1>
