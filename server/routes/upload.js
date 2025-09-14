@@ -51,7 +51,8 @@ router.get('/', (req, res) => {
     });
 
     const images = imageFiles.map(filename => {
-      const filePath = path.join('/uploads', filename).replace(/\\/g, '/');
+      // 모든 환경에서 상대 경로 사용 (프록시 활용)
+      const filePath = `/api/uploads/${filename}`;
       const fullPath = path.join(uploadDir, filename);
       const stats = fs.statSync(fullPath);
 
@@ -83,9 +84,8 @@ router.post('/', upload.single('image'), (req, res, next) => {
     return res.status(400).json({ error: '이미지 파일이 전송되지 않았습니다.' });
   }
 
-  // 클라이언트에게 반환할 파일 경로
-  // 예: /uploads/image-1678886400000.jpg
-  const filePath = path.join('/uploads', req.file.filename).replace(/\\/g, '/');
+  // 클라이언트에게 반환할 파일 경로 (모든 환경에서 상대 경로 사용)
+  const filePath = `/api/uploads/${req.file.filename}`;
 
   res.status(201).json({
     message: '이미지 업로드 성공!',
