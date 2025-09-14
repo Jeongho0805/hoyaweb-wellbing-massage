@@ -1,0 +1,308 @@
+{
+  "hero": {
+    "title": "웰빙카페지압안마원",
+    "subtitle": "국가공인 안마사들이 제공하는 전문 마사지 서비스",
+    "features": [
+      {
+        "icon": "",
+        "text": "국가공인 안마사"
+      },
+      {
+        "icon": "",
+        "text": "전문 마사지"
+      },
+      {
+        "icon": "",
+        "text": "믿을 수 있는 서비스"
+      }
+    ]
+  },
+  "services": {
+    "title": "마사지 서비스 입니다 아오!!1ㅁㄴㅇㄹ",
+    "subtitle": "국가공인 안마사들이 제공하는 다양한 전문 마사지 서비스를 경험해보세요",
+    "items": [
+      {
+        "id": 1,
+        "name": "전신 마사지",
+        "duration": "60분",
+        "price": "80,000원",
+        "description": "전신의 근육 긴장을 완화하고 혈액순환을 개선하는 전문 마사지",
+        "features": [
+          "근육 이완",
+          "스트레스 해소",
+          "혈액순환 개선"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "지압 마사지",
+        "duration": "45분",
+        "price": "65,000원",
+        "description": "경혈점을 자극하여 몸의 균형을 맞추는 전통 지압 요법",
+        "features": [
+          "경혈점 자극",
+          "자연치유력 향상",
+          "통증 완화"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "어깨/목 집중 마사지",
+        "duration": "30분",
+        "price": "45,000원",
+        "description": "목과 어깨 부위의 뭉친 근육을 집중적으로 풀어주는 마사지",
+        "features": [
+          "목어깨 집중",
+          "거북목 완화",
+          "두통 개선"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "발 마사지",
+        "duration": "40분",
+        "price": "50,000원",
+        "description": "발바닥 반사구를 자극하여 전신 건강을 증진시키는 발 전용 마사지",
+        "features": [
+          "반사구 자극",
+          "부종 완화",
+          "피로회복"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "아로마 테라피",
+        "duration": "70분",
+        "price": "95,000원",
+        "description": "천연 에센셜 오일을 사용한 힐링 마사지로 심신의 안정을 제공",
+        "features": [
+          "천연 오일 사용",
+          "심신 안정",
+          "수면 질 개선"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "커플 마사지",
+        "duration": "60분",
+        "price": "150,000원",
+        "description": "커플이 함께 받을 수 있는 프리미엄 마사지 서비스",
+        "features": [
+          "2인 동시 진행",
+          "프라이빗 룸",
+          "특별한 경험"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "웰빙카페지압안마원 소개",
+    "subtitle": "건강한 삶을 위한 전문적이고 신뢰할 수 있는 마사지 서비스를 제공합니다",
+    "mainTitle": "왜 웰빙카페지압안마원을 선택해야 할까요?",
+    "description": [
+      "웰빙카페지압안마원은 고객의 건강과 웰빙을 최우선으로 생각하는 전문 마사지샵입니다. 모든 안마사는 국가에서 인정한 자격증을 보유하고 있으며, 지속적인 교육과 연수를 통해 최고 수준의 서비스를 제공하고 있습니다.",
+      "스트레스가 많은 현대 사회에서 몸과 마음의 균형을 되찾을 수 있도록 개인의 상태에 맞는 맞춤형 마사지를 제공하여 진정한 휴식과 치유의 시간을 선사합니다."
+    ],
+    "features": [
+      {
+        "icon": "🏆",
+        "title": "국가공인 안마사",
+        "description": "정부에서 인정한 자격증을 보유한 전문 안마사들이 직접 서비스를 제공합니다."
+      },
+      {
+        "icon": "💼",
+        "title": "풍부한 경험",
+        "description": "평균 5년 이상의 임상 경험을 가진 숙련된 안마사들로 구성되어 있습니다."
+      },
+      {
+        "icon": "🌿",
+        "title": "천연 재료 사용",
+        "description": "피부에 자극이 없는 천연 오일과 로션만을 엄선하여 사용합니다."
+      },
+      {
+        "icon": "🏥",
+        "title": "위생적인 환경",
+        "description": "철저한 소독과 청결한 환경 관리로 안전하고 위생적인 서비스를 제공합니다."
+      }
+    ],
+    "therapistsTitle": "전문 안마사 소개",
+    "therapists": [
+      {
+        "name": "김안마",
+        "experience": "10년",
+        "specialty": "전신 마사지, 지압",
+        "license": "국가공인 안마사 1급"
+      },
+      {
+        "name": "이지압",
+        "experience": "8년",
+        "specialty": "아로마 테라피, 발 마사지",
+        "license": "국가공인 안마사 1급"
+      },
+      {
+        "name": "박마사지",
+        "experience": "12년",
+        "specialty": "스포츠 마사지, 재활",
+        "license": "국가공인 안마사 1급"
+      }
+    ]
+  },
+  "info": {
+    "title": "매장 정보",
+    "subtitle": "편리하고 쾌적한 환경에서 최고의 서비스를 받아보세요",
+    "contact": {
+      "address": "서울특별시 강남구 테헤란로 123길 45\n웰빙빌딩 2층",
+      "phone": "02-1234-5678",
+      "mobile": "010-1234-5678",
+      "transport": "지하철 2호선 강남역 3번 출구 도보 5분\n버스 정류장: 강남역 앞 (도보 3분)"
+    },
+    "hours": [
+      {
+        "day": "월요일",
+        "hours": "09:00 - 22:00",
+        "isOpen": true
+      },
+      {
+        "day": "화요일",
+        "hours": "09:00 - 22:00",
+        "isOpen": true
+      },
+      {
+        "day": "수요일",
+        "hours": "09:00 - 22:00",
+        "isOpen": true
+      },
+      {
+        "day": "목요일",
+        "hours": "09:00 - 22:00",
+        "isOpen": true
+      },
+      {
+        "day": "금요일",
+        "hours": "09:00 - 22:00",
+        "isOpen": true
+      },
+      {
+        "day": "토요일",
+        "hours": "09:00 - 20:00",
+        "isOpen": true
+      },
+      {
+        "day": "일요일",
+        "hours": "10:00 - 18:00",
+        "isOpen": true
+      }
+    ],
+    "notes": [
+      "예약 마감: 운영 종료 1시간 전",
+      "휴무일: 매월 둘째, 넷째 주 일요일"
+    ],
+    "facilities": [
+      {
+        "icon": "🚿",
+        "name": "샤워시설",
+        "description": "깔끔한 개인 샤워실 완비"
+      },
+      {
+        "icon": "🅿️",
+        "name": "주차장",
+        "description": "무료 주차 공간 제공"
+      },
+      {
+        "icon": "☕",
+        "name": "휴게실",
+        "description": "마사지 후 휴식 공간"
+      },
+      {
+        "icon": "🔒",
+        "name": "개인실",
+        "description": "프라이버시 보장되는 개별 룸"
+      },
+      {
+        "icon": "🌡️",
+        "name": "온도조절",
+        "description": "쾌적한 실내 온도 유지"
+      },
+      {
+        "icon": "🎵",
+        "name": "힐링음악",
+        "description": "편안한 배경음악 제공"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "매장 갤러리",
+    "subtitle": "편안하고 깔끔한 매장 환경을 확인해보세요",
+    "photos": [
+      {
+        "id": 1,
+        "url": "/uploads/image-1757822379600-781116860.png",
+        "title": "메인 마사지룸",
+        "description": "넓고 편안한 메인 마사지 공간",
+        "fileName": "스크린샷 2025-08-29 오후 9.23.50.png",
+        "uploadDate": "2025-09-14T03:59:39.606Z",
+        "service": "local-server"
+      },
+      {
+        "id": 2,
+        "url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "title": "프리미엄 개인실",
+        "description": "프라이버시가 보장되는 개인 마사지룸"
+      },
+      {
+        "id": 3,
+        "url": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "title": "휴게 라운지",
+        "description": "마사지 후 여유로운 휴식을 위한 공간"
+      },
+      {
+        "id": 4,
+        "url": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "title": "아로마 테라피룸",
+        "description": "자연 향기로 가득한 아로마 전용공간"
+      },
+      {
+        "id": 5,
+        "url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "title": "웰빙 카페 공간",
+        "description": "마사지 전후 차 한잔의 여유를 즐기는 카페"
+      }
+    ]
+  },
+  "reservation": {
+    "naverUrl": "https://map.naver.com/p/entry/place/1446243969?placePath=/ticket?additionalHeight=76&entry=plt&fromPanelNum=1&locale=ko&svcName=map_pcv5&timestamp=202509141050&entry=plt&fromPanelNum=1&locale=ko&svcName=map_pcv5&timestamp=202509141018&additionalHeight=76&from=map&searchType=place&lng=127.0291641&lat=37.2373591&c=15.00,0,0,0,dh",
+    "buttonText": "네이버 예약하기",
+    "description": "네이버를 통해 간편하게 예약하세요"
+  },
+  "contact": {
+    "title": "예약 문의",
+    "subtitle": "편리한 온라인 예약 문의를 통해 원하시는 시간에 서비스를 받으세요",
+    "quickContactTitle": "빠른 예약 문의",
+    "methods": [
+      {
+        "icon": "📞",
+        "title": "전화 예약",
+        "contact": "02-1234-5678",
+        "note": "평일 09:00~22:00"
+      },
+      {
+        "icon": "💬",
+        "title": "카카오톡 상담",
+        "contact": "@웰빙카페지압안마원",
+        "note": "실시간 상담 가능"
+      },
+      {
+        "icon": "📱",
+        "title": "문자 예약",
+        "contact": "010-1234-5678",
+        "note": "24시간 접수"
+      }
+    ],
+    "guidelines": [
+      "예약은 최소 2시간 전까지 해주세요",
+      "당일 예약은 전화로 문의해 주세요",
+      "예약 변경/취소는 1시간 전까지 가능합니다",
+      "노쇼 시 다음 예약에 제한이 있을 수 있습니다"
+    ]
+  }
+}

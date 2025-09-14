@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hoyaweb-wellbing-data-pvc
+  namespace: wellbing-massage
+spec:
+  accessModes:
+    - ReadWriteOnce # 하나의 노드에서만 읽고 쓸 수 있음
+  resources:
+    requests:
+      storage: 1Gi # 1GB의 저장 공간을 요청

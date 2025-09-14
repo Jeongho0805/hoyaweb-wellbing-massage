@@ -1,0 +1,15 @@
+{
+  "short_name": "웰빙카페지압안마원",
+  "name": "웰빙카페지압안마원 - 전문 마사지 서비스",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

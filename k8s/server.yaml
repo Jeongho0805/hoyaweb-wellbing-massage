@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wellbing-server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wellbing-server
+  template:
+    metadata:
+      labels:
+        app: wellbing-server
+    spec:
+      containers:
+        - name: wellbing-server
+          image: <your-container-registry>/wellbing-server:latest # CI/CD 파이프라인에서 이 부분을 업데이트해야 합니다.
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+          volumeMounts:
+            - name: wellbing-data-storage
+              mountPath: /usr/src/app/server/data # JSON 데이터 저장 경로
+            - name: wellbing-uploads-storage
+              mountPath: /usr/src/app/server/public/uploads # 이미지 업로드 저장 경로
+      volumes:
+        - name: wellbing-data-storage
+          persistentVolumeClaim:
+            claimName: wellbing-data-pvc
+        - name: wellbing-uploads-storage
+          persistentVolumeClaim:
+            claimName: wellbing-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wellbing-server-service
+  namespace: wellbing-massage
+spec:
+  selector:
+    app: wellbing-server
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

@@ -1,0 +1,22 @@
+# 1. Base Image
+FROM node:20-alpine
+
+# 2. Set working directory
+WORKDIR /usr/src/app
+
+# 3. Copy package.json and package-lock.json
+COPY server/package*.json ./
+
+# 4. Install production dependencies
+RUN npm install --production
+
+# 5. Copy server source code
+# The first argument must be the source directory relative to the project root.
+# The second argument must be the destination directory relative to the WORKDIR.
+COPY server/ .
+
+# 6. Expose port
+EXPOSE 3000
+
+# 7. Run the server
+CMD [ "node", "server.js" ]

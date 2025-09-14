@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wellbing-ingress
+  namespace: wellbing-massage
+  annotations:
+    # 사용하는 Ingress Controller에 맞는 주석을 사용해야 합니다. (예: nginx-ingress)
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: wellbing-server-service
+                port:
+                  number: 3000
+          - path: /()(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: wellbing-client-service
+                port:
+                  number: 80
