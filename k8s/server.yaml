@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: wellbing-server
-          image: <your-container-registry>/wellbing-server:latest # CI/CD 파이프라인에서 이 부분을 업데이트해야 합니다.
+          image: parkjeongho/wellbing-server:071542bef7107c375da097ea718bf6d61b60f89b
           ports:
             - containerPort: 3000
           env:
