@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: wellbing-client
-          image: parkjeongho/wellbing-client:8b75e023144d2e8281467ba01d7c826f93cf99c7
+          image: parkjeongho/wellbing-client:ae78f889134550cdfae1878353a0574f78750df3
           ports:
             - containerPort: 80
 ---
