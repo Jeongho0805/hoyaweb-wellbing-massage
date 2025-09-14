@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'client/**'
-      - 'server/**'
-      - 'Dockerfile.client'
-      - 'Dockerfile.server'
 
 permissions:
   contents: write # To push manifest changes back to the repo
