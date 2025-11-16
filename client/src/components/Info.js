@@ -31,18 +31,6 @@ const Info = () => {
                     <p>{info.contact.phone}</p>
                   </div>
                 </div>
-                <div className="contact-item">
-                  <div className="contact-text">
-                    <strong>휴대폰</strong>
-                    <p>{info.contact.mobile}</p>
-                  </div>
-                </div>
-                <div className="contact-item">
-                  <div className="contact-text">
-                    <strong>대중교통</strong>
-                    <p style={{whiteSpace: 'pre-line'}}>{info.contact.transport}</p>
-                  </div>
-                </div>
               </div>
             </div>
 
