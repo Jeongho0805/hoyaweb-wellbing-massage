@@ -36,7 +36,6 @@ const Header = () => {
             <a href="#gallery" onClick={() => scrollToSection('gallery')}>갤러리</a>
             <a href="#about" onClick={() => scrollToSection('about')}>소개</a>
             <a href="#info" onClick={() => scrollToSection('info')}>매장정보</a>
-            <a href="#contact" onClick={() => scrollToSection('contact')}>예약문의</a>
           </nav>
 
           <button 

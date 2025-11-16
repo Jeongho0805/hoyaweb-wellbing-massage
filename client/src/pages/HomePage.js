@@ -5,7 +5,6 @@ import Services from '../components/Services';
 import Gallery from '../components/Gallery';
 import About from '../components/About';
 import Info from '../components/Info';
-import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const HomePage = () => {
@@ -17,7 +16,6 @@ const HomePage = () => {
       <Gallery />
       <About />
       <Info />
-      <Contact />
       <Footer />
     </>
   );

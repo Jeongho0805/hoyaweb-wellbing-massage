@@ -25,7 +25,6 @@ const About = () => {
           <div className="features-grid">
             {about.features.map((feature, index) => (
               <div key={index} className="feature-card">
-                <div className="feature-icon">{feature.icon}</div>
                 <h4 className="feature-title">{feature.title}</h4>
                 <p className="feature-description">{feature.description}</p>
               </div>
@@ -38,9 +37,6 @@ const About = () => {
           <div className="therapists-grid">
             {about.therapists.map((therapist, index) => (
               <div key={index} className="therapist-card">
-                <div className="therapist-avatar">
-                  <span className="avatar-icon">👩‍⚕️</span>
-                </div>
                 <div className="therapist-info">
                   <h4 className="therapist-name">{therapist.name}</h4>
                   <p className="therapist-license">{therapist.license}</p>

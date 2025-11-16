@@ -20,28 +20,24 @@ const Info = () => {
               <h3>위치 및 연락처</h3>
               <div className="contact-details">
                 <div className="contact-item">
-                  <span className="contact-icon">📍</span>
                   <div className="contact-text">
                     <strong>주소</strong>
                     <p style={{whiteSpace: 'pre-line'}}>{info.contact.address}</p>
                   </div>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-icon">📞</span>
                   <div className="contact-text">
                     <strong>전화번호</strong>
                     <p>{info.contact.phone}</p>
                   </div>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-icon">📱</span>
                   <div className="contact-text">
                     <strong>휴대폰</strong>
                     <p>{info.contact.mobile}</p>
                   </div>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-icon">🚇</span>
                   <div className="contact-text">
                     <strong>대중교통</strong>
                     <p style={{whiteSpace: 'pre-line'}}>{info.contact.transport}</p>
@@ -62,38 +58,11 @@ const Info = () => {
                   </div>
                 ))}
               </div>
-              <div className="hours-note">
-                {info.notes.map((note, index) => (
-                  <p key={index}><strong>{note.split(':')[0]}:</strong> {note.split(':')[1]}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="facilities-section">
-            <h3>편의시설</h3>
-            <div className="facilities-grid">
-              {info.facilities.map((facility, index) => (
-                <div key={index} className="facility-item">
-                  <span className="facility-icon">{facility.icon}</span>
-                  <div className="facility-info">
-                    <h4>{facility.name}</h4>
-                    <p>{facility.description}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
           <div className="map-section">
             <h3>찾아오시는 길</h3>
-            <div className="map-placeholder">
-              <div className="map-content">
-                <span className="map-icon">🗺️</span>
-                <p>지도 위치</p>
-                <small>경기 수원시 권선구 곡선로50번길 33 4층 웰빙카페지압안마원</small>
-              </div>
-            </div>
             <div className="map-directions">
               <div className="direction-item">
                 <strong>자가용 이용시</strong>
