@@ -31,22 +31,6 @@ const About = () => {
             ))}
           </div>
         </div>
-
-        <div className="therapists-section">
-          <h3 className="therapists-title">{about.therapistsTitle}</h3>
-          <div className="therapists-grid">
-            {about.therapists.map((therapist, index) => (
-              <div key={index} className="therapist-card">
-                <div className="therapist-info">
-                  <h4 className="therapist-name">{therapist.name}</h4>
-                  <p className="therapist-license">{therapist.license}</p>
-                  <p className="therapist-experience">경력 {therapist.experience}</p>
-                  <p className="therapist-specialty">전문분야: {therapist.specialty}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
